@@ -21,6 +21,8 @@ Pełna treść licencji znajduje się w pliku [LICENSE](LICENSE.txt).
 Skrócony opis warunków licencji znajdziemy [tutaj](https://creativecommons.org/licenses/by-sa/4.0/deed.pl).
 # Współpraca
 Nie ukrywam, że przydałaby mi się pomoc przy tworzeniu kompletnego zestawu opracowań, bo materiału jest naprawdę dużo. Muszę jednak jeszcze przemyśleć procedurę, która umożliwi sprawną współpracę, o ile znajdą się chętne osoby.
+## Autorzy
+- [Dominik Blek](https://www.linkedin.com/in/dominik-blek)
 # Spis treści
 ## 1.0 General Security Concepts
 ### 1.1 Compare and contrast various types of security controls
@@ -117,6 +119,11 @@ Nie ukrywam, że przydałaby mi się pomoc przy tworzeniu kompletnego zestawu op
 	- [Key exchange](1-general-security-concepts/1-4-cryptographic-solutions.md#key-exchange)
 	- [Algorithms](1-general-security-concepts/1-4-cryptographic-solutions.md#algorithms)
 	- [Key length](1-general-security-concepts/1-4-cryptographic-solutions.md#key-length)
+- [Tools](1-general-security-concepts/1-4-cryptographic-solutions.md#tools)
+	- [Trusted Platform Module (TPM)](1-general-security-concepts/1-4-cryptographic-solutions.md#Trusted-Platform-Module-(TPM))
+	− [Hardware security module (HSM)](1-general-security-concepts/1-4-cryptographic-solutions.md#Hardware-Security-Module-(HSM))
+	− [Key management system](1-general-security-concepts/1-4-cryptographic-solutions.md#Key-Management-System-or-Service-(KMS))
+	− [Secure enclave](1-general-security-concepts/1-4-cryptographic-solutions.md#Secure-Enclave)
 - [Obfuscation](1-general-security-concepts/1-4-cryptographic-solutions.md#obfuscation)
 	- [Steganography](1-general-security-concepts/1-4-cryptographic-solutions.md#steganography)
 	- [Tokenization](1-general-security-concepts/1-4-cryptographic-solutions.md#tokenization)
