@@ -370,6 +370,7 @@ Coraz częściej mówi się również o komputerach kwantowych. Teoretycznie mog
 
 **Dobierając długość klucza, należy znaleźć kompromis pomiędzy bezpieczeństwem a wydajnością.** Przy zachowaniu tego samego algorytmu dłuższe klucze zazwyczaj zapewniają wyższy poziom ochrony, ale jednocześnie wymagają większej mocy obliczeniowej oraz więcej czasu na wykonywanie operacji kryptograficznych. Ma to szczególne znaczenie podczas zabezpieczania danych przesyłanych przez sieć, gdzie szyfrowanie i odszyfrowywanie musi odbywać się szybko i często w czasie rzeczywistym.
 # Tools
+<<<<<<< HEAD
 ***Narzędzia*** (ang. *tools*) to fizyczne lub cyfrowe instrumenty, które są wykorzystywane do ochrony kryptograficznej. Mogą to być moduły sprzętowe wbudowane w podzespoły komputera, urządzenia podłączane do komputera z zewnątrz albo usługi w chmurze.
 
 Narzędzia kryptograficzne są wykorzystywane jako dodatkowa warstwa ochrony, która zabezpiecza dane na każdym etapie - od ich generowania i przechowywania, aż po bezpieczne przetwarzanie. Gwarantują one bezpieczne generowanie, przechowywanie i rotację kluczy. Ich głównym zadaniem jest zapewnienie poufności i integralności operacji kryptograficznych, niezależnie od tego, czy odbywają się one na lokalnym komputerze, czy w chmurze. Narzędzia tworzą niezmienną bazę zaufania, odporną na ataki na poziomie oprogramowania.
@@ -380,6 +381,20 @@ Moduł TPM (dosłownie Moduł Zaufanej Platformy) to dedykowany mikroukład kryp
 
 Moduł TPM pełni ważną rolę jako **Hardware Root of Trust** (ang. Sprzętowego Źródła Zaufania) poprzez następujące operacje:
 1. **Rozruch (ang. Boot)**: Od razu jak zostanie uruchomione zasilanie komputera, oprogramowanie układowe płyty głównej (np. BIOS lub UEFI - Unified Extensible Firmware Interface) uruchamia Measured Boot (ang. Mierzony rozruch), czyli proces rejestrowania stanu bezpieczeństwa komputera podczas jego uruchamiania. Przed uruchomieniem każdego kodu i elementu systemu obliczany jest jego hash, czyli cyfrowy odcisk palca. Zapisywany jest w bezpiecznej pamięci TPM, przez co wiemy dokładnie w jakim stanie sprzęt został uruchomiony upewniając się, że żaden element nie został zainfekowany.
+=======
+**Narzędzia (ang. *tools*), w kontekście kryptografii, to fizyczne lub cyfrowe instrumenty, które są wykorzystywane do ochrony kryptograficznej**. Mogą to być moduły sprzętowe wbudowane w podzespoły komputera, urządzenia podłączane do komputera z zewnątrz albo usługi w chmurze.
+
+Narzędzia kryptograficzne są wykorzystywane jako dodatkowa warstwa ochrony, która zabezpiecza dane na każdym etapie - od ich generowania i przechowywania, aż po bezpieczne przetwarzanie. Gwarantują one bezpieczne generowanie, przechowywanie i rotację kluczy. Ich głównym zadaniem jest zapewnienie poufności i integralności operacji kryptograficznych, niezależnie od tego, czy odbywają się one na lokalnym komputerze, czy w chmurze. Narzędzia tworzą niezmienną bazę zaufania, odporną na ataki na poziomie oprogramowania.
+## Trusted Platform Module (TPM)
+Moduł TPM to **dedykowany mikroukład kryptograficzny na płycie głównej urządzenia końcowego** (np. laptop, smartfon). Służy do **bezpiecznego generowania, przechowywania i ograniczania użycia kluczy kryptograficznych**.
+
+Może on występować w dwóch formach:
+- **dTPM** (*discrete TPM*), czyli fizyczny, dedykowany układ scalony wlutowany na płycie głównej.
+- **fTPM** (*firmware TPM*), czyli rozwiązanie programowe działające wewnątrz bezpiecznej strefy procesora głównego.
+
+Moduł TPM pełni ważną rolę jako ***Sprzętowego Źródła Zaufania*** (ang. *Hardware Root of Trust*) poprzez następujące operacje:
+1. **Rozruch (ang. Boot)**: Od razu jak zostanie uruchomione zasilanie komputera, oprogramowanie układowe płyty głównej (np. BIOS lub UEFI - Unified Extensible Firmware Interface) uruchamia tzw. *mierzony rozruch* (ang. *measured boot*), czyli proces rejestrowania stanu bezpieczeństwa komputera podczas jego uruchamiania. Przed uruchomieniem każdego kodu i elementu systemu obliczany jest jego hash, czyli cyfrowy odcisk palca. Jest on zapisywany w bezpiecznej pamięci TPM, przez co wiemy dokładnie w jakim stanie sprzęt został uruchomiony upewniając się, że żaden element nie został zmodyfikowany w nieautoryzowany sposób.
+>>>>>>> c069955de455cc9709e1aa57729fe2c48e60cef6
 2. **Wydanie kluczy (ang. Unsealing)**: Po zakończeniu pomiarów TPM sprawdza, czy aktualne wartości w rejestrach PCR zgadzają się z zapisanym wcześniej, zaufanym wzorcem. Jeśli stan systemu jest prawidłowy, TPM "odpieczętowuje" (ang. unseals) i wydaje klucz szyfrujący. Jeśli wykryto jakąkolwiek nieautoryzowaną zmianę (np. obecność rootkita), TPM odmawia wydania klucza.
 3. **Dostęp do danych**: Wydany klucz przekazywany jest do mechanizmu Full Disk Encryption (FDE), takiego jak BitLocker. Dysk zostaje odszyfrowany, a użytkownik może bezpiecznie zalogować się do systemu.
 ## Hardware Security Module (HSM)
@@ -410,7 +425,11 @@ Klucze kryptograficzne mają swoją hierarchię bazującą na:
 ### Magazyny Kluczy
 **Magazyn kluczy** (ang. Key Vault) to scentralizowana usługa — najczęściej chmurowa — przeznaczona do bezpiecznego przechowywania i udostępniania kluczy kryptograficznych, certyfikatów oraz sekretów aplikacji.
 Kluczowe cechy magazynów kluczy:
+<<<<<<< HEAD
 - **Zarządzanie sekretami** (ang. Secrets Management): Przechowywanie nie tylko kluczy szyfrujących, ale też haseł, tokenów API czy ciągów połączeniowych do baz danych (connection strings).
+=======
+- **Zarządzanie sekretami** (ang. *secrets management*): Przechowywanie nie tylko kluczy szyfrujących, ale też haseł, tokenów API czy ciągów połączeniowych do baz danych (*connection strings*).
+>>>>>>> c069955de455cc9709e1aa57729fe2c48e60cef6
 - **Rejestrowanie zdarzeń i audyt** (ang. Audit Logging): Każdy dostęp do klucza lub sekretu jest logowany (kto, kiedy i do jakiego zasobu się odwołał), co ułatwia zachowanie zgodności z normami bezpieczeństwa.
 - **Ochrona sprzętowa w tle** (ang. HSM Backing): Usługi chmurowe (np. AWS KMS, Azure Key Vault, HashiCorp Vault) często wykorzystują dedykowane moduły HSM na zapleczu do ochrony najważniejszych kluczy zarządczych (KEK).
 - **Kontrola dostępu**: Dostęp do sekretów jest przyznawany tożsamościom aplikacji na podstawie polityk dostępowych, co eliminuje konieczność wpisywania haseł bezpośrednio w kodzie źródłowym. Na kontrolę dostępu składa się: 
